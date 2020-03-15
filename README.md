@@ -1,4 +1,5 @@
-# ./sketch-ignore
+# sketch-ignore
+
 
 ## Installation
 
@@ -6,87 +7,31 @@
 - Un-zip
 - Double-click on ./sketch-ignore.sketchplugin
 
-## Development Guide
 
-_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
+## Purpose
 
-### Usage
+<div style='background-color: #FFCECE; color: black; padding: 10px;'>
+(!) As of now, since the Sketch Team has yet to release the documentation for Cloud components, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show components.
+</div>
 
-Install the dependencies
+sketch-ignore is supposed to work like [`.gitignore`](https://git-scm.com/docs/gitignore) for Sketch Cloud.
+- It ignores specific layers when uploading files to Sketch Cloud.
+- This is especially useful when your programmer views your designs from the Sketch Cloud Inspector online and requires to be able to see the specifics of your design.
+- Sometimes, you may have layers such as safe areas, that although are transparent, block all your other layers.
+- This prevents your programmer from being able to click on to layers underneath the safe area layer. 
+- This can be solved by hiding layers that you do not wish to be uploaded.
+- However, this is troublesome if you have many such layers.
+- Thus, you may use sketch-ignore to hide the layers each time you upload automatically
 
-```bash
-npm install
-```
 
-Once the installation is done, you can run some commands inside the project folder:
+## Usage
 
-```bash
-npm run build
-```
+As of now, since the Sketch Team has yet to release the documentation for Cloud components, there are only two things you may do:
 
-To watch for changes:
+### Edit Indicator
 
-```bash
-npm run watch
-```
+- Edit the string of text sketch-ignore looks for at the beginning of layer names, when hiding layers. The default indicator is \\\\ (double **backslash**).
 
-Additionally, if you wish to run the plugin every time it is built:
+### Toggle Layers
 
-```bash
-npm run start
-```
-
-### Custom Configuration
-
-#### Babel
-
-To customize Babel, you have two options:
-
-- You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
-
-- If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
-
-#### Webpack
-
-To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
-
-```js
-/**
- * Function that mutates original webpack config.
- * Supports asynchronous changes when promise is returned.
- *
- * @param {object} config - original webpack config.
- * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
- **/
-module.exports = function(config, isPluginCommand) {
-  /** you can change config here **/
-}
-```
-
-### Debugging
-
-To view the output of your `console.log`, you have a few different options:
-
-- Use the [`sketch-dev-tools`](https://github.com/skpm/sketch-dev-tools)
-- Run `skpm log` in your Terminal, with the optional `-f` argument (`skpm log -f`) which causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
-
-### Publishing your plugin
-
-```bash
-skpm publish <bump>
-```
-
-(where `bump` can be `patch`, `minor` or `major`)
-
-`skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
-
-You will need to specify a `repository` in the `package.json`:
-
-```diff
-...
-+ "repository" : {
-+   "type": "git",
-+   "url": "git+https://github.com/ORG/NAME.git"
-+  }
-...
-```
+- Toggle between hide and show layers. Will be removed when the Sketch Team releases the documentation for Cloud components.

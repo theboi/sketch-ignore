@@ -13,16 +13,16 @@
     },
     {
       "script": "./index.js",
-      "handler": "toggleIgnored",
-      "name": "Toggle Ignored",
-      "identifier": "toggleIgnored"
+      "handler": "toggleLayers",
+      "name": "Toggle Layers",
+      "identifier": "toggleLayers"
     }
   ],
   "menu": {
     "title": "sketch-ignore",
     "items": [
       "editIndicator",
-      "toggleIgnored"
+      "toggleLayers"
     ]
   }
 }

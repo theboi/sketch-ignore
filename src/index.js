@@ -18,8 +18,8 @@ if (Settings.documentSettingForKey(document, 'hide-is-on-key') === undefined) {
   Settings.setDocumentSettingForKey(document, 'hide-is-on-key', false)
 }
 
-// toggleIgnored
-export const toggleIgnored = () => {
+// toggleLayers
+export const toggleLayers = () => {
   document.pages.map(value => {
     value.layers.map(value => {
       if (value.name.startsWith(indicator)) {
