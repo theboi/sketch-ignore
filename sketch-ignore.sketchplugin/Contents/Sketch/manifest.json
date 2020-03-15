@@ -6,13 +6,13 @@
   "bundleVersion": 1,
   "commands": [
     {
-      "script": "./index.js",
+      "script": "__index.js",
       "handler": "editIndicator",
       "name": "Edit Indicator",
       "identifier": "editIndicator"
     },
     {
-      "script": "./index.js",
+      "script": "__index.js",
       "handler": "toggleIgnored",
       "name": "Toggle Ignored",
       "identifier": "toggleIgnored"
@@ -24,5 +24,12 @@
       "editIndicator",
       "toggleIgnored"
     ]
-  }
+  },
+  "version": "0.1.0",
+  "description": "",
+  "name": "./sketch-ignore",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "Ryan The",
+  "authorEmail": "ryan.the.2006@gmail.com"
 }
