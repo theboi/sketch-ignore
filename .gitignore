@@ -1,5 +1,5 @@
 # build artifacts
-./sketch-ignore.sketchplugin
+sketch-ignore.sketchplugin
 
 # npm
 node_modules

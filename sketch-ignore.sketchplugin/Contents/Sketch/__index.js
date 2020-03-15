@@ -97,12 +97,12 @@ var exports =
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: toggleIgnored, editIndicator */
+/*! exports provided: toggleLayers, editIndicator */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleIgnored", function() { return toggleIgnored; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleLayers", function() { return toggleLayers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editIndicator", function() { return editIndicator; });
 // Required libraries
 var DOM = __webpack_require__(/*! sketch/dom */ "sketch/dom");
@@ -122,10 +122,10 @@ var indicator = Settings.settingForKey('indicator-key'); // For first time sketc
 
 if (Settings.documentSettingForKey(document, 'hide-is-on-key') === undefined) {
   Settings.setDocumentSettingForKey(document, 'hide-is-on-key', false);
-} // toggleIgnored
+} // toggleLayers
 
 
-var toggleIgnored = function toggleIgnored() {
+var toggleLayers = function toggleLayers() {
   document.pages.map(function (value) {
     value.layers.map(function (value) {
       if (value.name.startsWith(indicator)) {
@@ -143,8 +143,8 @@ var toggleIgnored = function toggleIgnored() {
 
 var editIndicator = function editIndicator() {
   UI.getInputFromUser("Edit Indicator", {
-    description: 'sketch-ignore will hide files that begin with this indicator text when Hide Ignored is called.',
-    type: UI.INPUT_TYPE.text,
+    description: 'sketch-ignore will hide/show files that begin with this indicator text when Toggle Ignored is called. (Case-sensitive)',
+    type: UI.INPUT_TYPE.string,
     initialValue: indicator
   }, function (error, value) {
     if (error) {
@@ -153,7 +153,7 @@ var editIndicator = function editIndicator() {
     } else {
       Settings.setSettingForKey('indicator-key', value);
       indicator = value;
-      UI.message("sketch-ignore: Indicator set to ".concat(indicator, "."));
+      UI.message("sketch-ignore: Indicator set to \"".concat(indicator, "\"."));
     }
   });
 };
@@ -211,6 +211,6 @@ module.exports = require("sketch/ui");
 }
 globalThis['editIndicator'] = __skpm_run.bind(this, 'editIndicator');
 globalThis['onRun'] = __skpm_run.bind(this, 'default');
-globalThis['toggleIgnored'] = __skpm_run.bind(this, 'toggleIgnored')
+globalThis['toggleLayers'] = __skpm_run.bind(this, 'toggleLayers')
 
 //# sourceMappingURL=__index.js.map

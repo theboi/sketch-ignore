@@ -13,21 +13,21 @@
     },
     {
       "script": "__index.js",
-      "handler": "toggleIgnored",
-      "name": "Toggle Ignored",
-      "identifier": "toggleIgnored"
+      "handler": "toggleLayers",
+      "name": "Toggle Layers",
+      "identifier": "toggleLayers"
     }
   ],
   "menu": {
     "title": "sketch-ignore",
     "items": [
       "editIndicator",
-      "toggleIgnored"
+      "toggleLayers"
     ]
   },
   "version": "0.1.0",
   "description": "",
-  "name": "./sketch-ignore",
+  "name": "sketch-ignore",
   "disableCocoaScriptPreprocessor": true,
   "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
   "author": "Ryan The",

@@ -3,15 +3,21 @@
 
 ## Installation
 
-- [Download](../../releases/latest/download/./sketch-ignore.sketchplugin.zip) the latest release of the plugin
+- [Download](../../releases/latest/download/sketch-ignore.sketchplugin.zip) the latest release of the plugin
 - Un-zip
-- Double-click on ./sketch-ignore.sketchplugin
+- Double-click on sketch-ignore.sketchplugin
+
+## tl;dr
+
+- **Supposedly**, sketch-ignore hides selected layers automatically when uploading to Sketch Cloud, like [`.gitignore`](https://git-scm.com/docs/gitignore).
+- **As of now**, sketch-ignore provides a menu bar option to show/hide selected layers.
+- Selected layers are indicated by the Indicator, a string of text the layer name begins with (this is `\\\\` by default).
 
 
 ## Purpose
 
-<div style='background-color: #FFCECE; color: black; padding: 10px;'>
-(!) As of now, since the Sketch Team has yet to release the documentation for Cloud components, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show components.
+<div style='background-color: #FFCECE; color: black; padding: 10px; width: 100%'>
+(!) As of now, since the Sketch Team has <a style='color: #004594' href='https://developer.sketch.com/reference/action/cloud/'>yet to release the documentation for Cloud components</a>, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show components.
 </div>
 
 sketch-ignore is supposed to work like [`.gitignore`](https://git-scm.com/docs/gitignore) for Sketch Cloud.
