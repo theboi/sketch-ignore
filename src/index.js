@@ -8,7 +8,7 @@ const Settings = require('sketch/settings')
 const document = DOM.getSelectedDocument()
 // For first time sketch-ignore is ran, set a key to save indicator data
 if (Settings.settingForKey('indicator-key') === undefined) {
-  Settings.setSettingForKey('indicator-key', '\\\\')
+  Settings.setSettingForKey('indicator-key', '//')
 }
 
 // Set indicator variable

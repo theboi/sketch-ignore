@@ -11,7 +11,7 @@
 
 - **Supposedly**, sketch-ignore hides selected layers automatically when uploading to Sketch Cloud, like [`.gitignore`](https://git-scm.com/docs/gitignore).
 - **As of now**, sketch-ignore provides a menu bar option to show/hide selected layers.
-- Selected layers are indicated by the Indicator, a string of text the layer name begins with (this is `\\\\` by default).
+- Selected layers are indicated by the Indicator, a string of text the layer name begins with (this is `//` by default).
 
 
 ## Purpose
@@ -34,7 +34,7 @@ As of now, since the Sketch Team has yet to release the documentation for Sketch
 
 ### Edit Indicator
 
-- Edit the string of text sketch-ignore looks for at the beginning of layer names, when hiding layers. The default indicator is \\\\ (double **backslash**).
+- Edit the string of text sketch-ignore looks for at the beginning of layer names, when hiding layers. The default indicator is `//`.
 
 ### Toggle Layers
 
