@@ -2527,7 +2527,7 @@ var Settings = __webpack_require__(/*! sketch/settings */ "sketch/settings");
 var document = DOM.getSelectedDocument(); // For first time sketch-ignore is ran, set a key to save indicator data
 
 if (Settings.settingForKey('indicator-key') === undefined) {
-  Settings.setSettingForKey('indicator-key', '\\\\');
+  Settings.setSettingForKey('indicator-key', '//');
 } // Set indicator variable
 
 
@@ -2601,7 +2601,7 @@ var openSettings = function openSettings() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/dc7dee34be28b3da3e5e32e4b8bf5a12.html";
+module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/9502fad1e2409042d2969684c096ed19.html";
 
 /***/ }),
 
