@@ -40,7 +40,7 @@
   "description": "s",
   "name": "sketch-ignore",
   "disableCocoaScriptPreprocessor": true,
-  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "appcast": "https://raw.githubusercontent.com/theboi/sketch-ignore/master/.appcast.xml",
   "author": "Ryan The",
   "authorEmail": "ryan.the.2006@gmail.com"
 }

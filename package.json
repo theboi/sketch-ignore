@@ -23,5 +23,7 @@
   "devDependencies": {
     "@skpm/builder": "^0.7.0"
   },
-  "author": "Ryan The <ryan.the.2006@gmail.com>"
+  "author": "Ryan The <ryan.the.2006@gmail.com>",
+  "repository": "https://github.com/theboi/sketch-ignore",
+  "license": "GPL-3.0"
 }
