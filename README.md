@@ -44,6 +44,7 @@ As of now, since the Sketch Team has yet to release the documentation for Sketch
 
 ## Thanks
 
+This is my first Sketch Plugin so apologies if anything looks or feels really bad :(  
 Feel free to **pull request** or drop a **feedback/suggestion** if you have any :)  
 Check me out at [ryanthe.com](https://www.ryanthe.com)  
-Thanks for using sketch-ignore!
+Thanks for using sketch-ignore!  
