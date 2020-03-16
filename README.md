@@ -16,9 +16,7 @@
 
 ## Purpose
 
-<div style='background-color: #FFCECE; color: black; padding: 10px; width: 100%'>
-(!) As of now, since the Sketch Team has <a style='color: #004594' href='https://developer.sketch.com/reference/action/cloud/'>yet to release the documentation for Cloud actions</a>, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show layers.
-</div>
+(!) As of now, since the Sketch Team has [yet to release the documentation for Cloud actions](https://developer.sketch.com/reference/action/cloud/), the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show layers.
 
 sketch-ignore is supposed to work like [`.gitignore`](https://git-scm.com/docs/gitignore) for Sketch Cloud.
 - It ignores specific layers when uploading files to Sketch Cloud.
@@ -43,8 +41,9 @@ As of now, since the Sketch Team has yet to release the documentation for Sketch
 - Toggle between hiding and showing layers.
 - You may also use the keyboard shortcut, ⌃T (Ctrl T)
 
-<div style='background-color: #CEFFCF; color: black; padding: 10px; width: 100%'>
-Feel free to <b>pull request</b> or drop a <b>feedback/suggestion</b> if you have any :) <br />
-Check me out at <a style='color: #004594' href='https://ryanthe.com'>ryanthe.com</a> <br />
+
+## Thanks
+
+Feel free to **pull request** or drop a **feedback/suggestion** if you have any :)  
+Check me out at [ryanthe.com](https://www.ryanthe.com)  
 Thanks for using sketch-ignore!
-</div>
