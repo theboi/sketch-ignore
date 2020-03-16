@@ -15,7 +15,18 @@
       "script": "__index.js",
       "handler": "toggleLayers",
       "name": "Toggle Layers",
+      "shortcut": "ctrl t",
       "identifier": "toggleLayers"
+    },
+    {
+      "script": "__index.js",
+      "name": "On Open Document",
+      "handlers": {
+        "actions": {
+          "DocumentSaved": "onOpenDocument"
+        }
+      },
+      "identifier": "onOpenDocument"
     }
   ],
   "menu": {
@@ -26,7 +37,7 @@
     ]
   },
   "version": "0.1.0",
-  "description": "",
+  "description": "s",
   "name": "sketch-ignore",
   "disableCocoaScriptPreprocessor": true,
   "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",

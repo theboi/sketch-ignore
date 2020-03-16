@@ -17,7 +17,7 @@
 ## Purpose
 
 <div style='background-color: #FFCECE; color: black; padding: 10px; width: 100%'>
-(!) As of now, since the Sketch Team has <a style='color: #004594' href='https://developer.sketch.com/reference/action/cloud/'>yet to release the documentation for Cloud components</a>, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show components.
+(!) As of now, since the Sketch Team has <a style='color: #004594' href='https://developer.sketch.com/reference/action/cloud/'>yet to release the documentation for Cloud actions</a>, the plugin is incomplete and you have to manually use a keyboard shortcut to hide/show layers.
 </div>
 
 sketch-ignore is supposed to work like [`.gitignore`](https://git-scm.com/docs/gitignore) for Sketch Cloud.
@@ -32,7 +32,7 @@ sketch-ignore is supposed to work like [`.gitignore`](https://git-scm.com/docs/g
 
 ## Usage
 
-As of now, since the Sketch Team has yet to release the documentation for Cloud components, there are only two things you may do:
+As of now, since the Sketch Team has yet to release the documentation for Sketch Cloud actions, there are only two things you may do:
 
 ### Edit Indicator
 
@@ -40,4 +40,11 @@ As of now, since the Sketch Team has yet to release the documentation for Cloud 
 
 ### Toggle Layers
 
-- Toggle between hide and show layers. Will be removed when the Sketch Team releases the documentation for Cloud components.
+- Toggle between hiding and showing layers.
+- You may also use the keyboard shortcut, ⌃T (Ctrl T)
+
+<div style='background-color: #CEFFCF; color: black; padding: 10px; width: 100%'>
+Feel free to <b>pull request</b> or drop a <b>feedback/suggestion</b> if you have any :) <br />
+Check me out at <a style='color: #004594' href='https://ryanthe.com'>ryanthe.com</a> <br />
+Thanks for using sketch-ignore!
+</div>

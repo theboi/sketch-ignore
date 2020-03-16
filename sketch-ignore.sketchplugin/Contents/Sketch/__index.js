@@ -97,13 +97,14 @@ var exports =
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: toggleLayers, editIndicator */
+/*! exports provided: toggleLayers, editIndicator, onOpenDocument */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleLayers", function() { return toggleLayers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editIndicator", function() { return editIndicator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onOpenDocument", function() { return onOpenDocument; });
 // Required libraries
 var DOM = __webpack_require__(/*! sketch/dom */ "sketch/dom");
 
@@ -111,7 +112,8 @@ var UI = __webpack_require__(/*! sketch/ui */ "sketch/ui");
 
 var Settings = __webpack_require__(/*! sketch/settings */ "sketch/settings");
 
-var document = DOM.getSelectedDocument(); // For first time sketch-ignore is ran, set a key to save indicator data
+var document = DOM.getSelectedDocument();
+var test = 'ok'; // For first time sketch-ignore is ran, set a key to save indicator data
 
 if (Settings.settingForKey('indicator-key') === undefined) {
   Settings.setSettingForKey('indicator-key', '\\\\');
@@ -120,8 +122,8 @@ if (Settings.settingForKey('indicator-key') === undefined) {
 
 var indicator = Settings.settingForKey('indicator-key'); // For first time sketch-ignore is ran on specific document, set a key to save toggle hide/show data
 
-if (Settings.documentSettingForKey(document, 'hide-is-on-key') === undefined) {
-  Settings.setDocumentSettingForKey(document, 'hide-is-on-key', false);
+if (Settings.sessionVariable('hideIsOn-key') === undefined) {
+  Settings.setSessionVariable('hideIsOn-key', false);
 } // toggleLayers
 
 
@@ -129,16 +131,16 @@ var toggleLayers = function toggleLayers() {
   document.pages.map(function (value) {
     value.layers.map(function (value) {
       if (value.name.startsWith(indicator)) {
-        if (Settings.documentSettingForKey(document, 'hide-is-on-key')) {
-          Settings.setDocumentSettingForKey(document, 'hide-is-on-key', false);
+        if (Settings.sessionVariable('hideIsOn-key')) {
           value.hidden = false;
         } else {
-          Settings.setDocumentSettingForKey(document, 'hide-is-on-key', true);
           value.hidden = true;
         }
       }
     });
-  });
+  }); // Toggle hideIsOn-key variable
+
+  Settings.setSessionVariable('hideIsOn-key', !Settings.sessionVariable('hideIsOn-key'));
 }; // editIndicator
 
 var editIndicator = function editIndicator() {
@@ -153,10 +155,13 @@ var editIndicator = function editIndicator() {
     } else {
       Settings.setSettingForKey('indicator-key', value);
       indicator = value;
-      UI.message("sketch-ignore: Indicator set to \"".concat(indicator, "\"."));
+      UI.message("sketch-ignore: Indicator set to \"".concat(indicator, "\". ").concat(test));
     }
   });
 };
+function onOpenDocument(context) {
+  test = 'hello';
+}
 
 /***/ }),
 
@@ -211,6 +216,7 @@ module.exports = require("sketch/ui");
 }
 globalThis['editIndicator'] = __skpm_run.bind(this, 'editIndicator');
 globalThis['onRun'] = __skpm_run.bind(this, 'default');
-globalThis['toggleLayers'] = __skpm_run.bind(this, 'toggleLayers')
+globalThis['toggleLayers'] = __skpm_run.bind(this, 'toggleLayers');
+globalThis['onOpenDocument'] = __skpm_run.bind(this, 'onOpenDocument')
 
 //# sourceMappingURL=__index.js.map

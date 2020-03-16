@@ -15,7 +15,18 @@
       "script": "./index.js",
       "handler": "toggleLayers",
       "name": "Toggle Layers",
+      "shortcut": "ctrl t",
       "identifier": "toggleLayers"
+    },
+    {
+      "script": "./index.js",
+      "name": "On Open Document",
+      "handlers": {
+        "actions": {
+          "DocumentSaved": "onOpenDocument"
+        }
+      },
+      "identifier": "onOpenDocument"
     }
   ],
   "menu": {
