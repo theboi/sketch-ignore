@@ -1,10 +1,11 @@
+import BrowserWindow from 'sketch-module-web-view'
+
 // Required libraries
 const DOM = require('sketch/dom')
 const UI = require('sketch/ui')
 const Settings = require('sketch/settings')
 
 const document = DOM.getSelectedDocument()
-let test = 'ok';
 // For first time sketch-ignore is ran, set a key to save indicator data
 if (Settings.settingForKey('indicator-key') === undefined) {
   Settings.setSettingForKey('indicator-key', '\\\\')
@@ -22,6 +23,17 @@ if (Settings.sessionVariable('hideIsOn-key') === undefined) {
 export const toggleLayers = () => {
   document.pages.map(value => {
     value.layers.map(value => {
+      value.layers.map(value => {
+        // For layers in Artboard
+        if (value.name.startsWith(indicator)) {
+          if (Settings.sessionVariable('hideIsOn-key')) {
+            value.hidden = false
+          } else {
+            value.hidden = true
+          }
+        }
+      })
+      // For Artboards/layers outside Artboard
       if (value.name.startsWith(indicator)) {
         if (Settings.sessionVariable('hideIsOn-key')) {
           value.hidden = false
@@ -51,13 +63,19 @@ export const editIndicator = () => {
       } else {
         Settings.setSettingForKey('indicator-key', value)
         indicator = value
-        UI.message(`sketch-ignore: Indicator set to "${indicator}". ${test}`)
+        UI.message(`sketch-ignore: Indicator set to "${indicator}".`)
 
       }
     }
   )
 }
 
-export function onOpenDocument(context) {
-  test = 'hello'
+export const openSettings = () => {
+  const options = {
+    identifier: 'unique.id',
+  }
+
+  const browserWindow = new BrowserWindow(options)
+
+  browserWindow.loadURL(require('./settings/settings.html'))
 }

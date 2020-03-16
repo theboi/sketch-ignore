@@ -20,6 +20,12 @@
     },
     {
       "script": "./index.js",
+      "handler": "openSettings",
+      "name": "Settings",
+      "identifier": "openSettings"
+    },
+    {
+      "script": "./index.js",
       "name": "On Open Document",
       "handlers": {
         "actions": {
@@ -33,7 +39,8 @@
     "title": "sketch-ignore",
     "items": [
       "editIndicator",
-      "toggleLayers"
+      "toggleLayers",
+      "openSettings"
     ]
   }
 }
