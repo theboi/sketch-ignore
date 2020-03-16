@@ -2601,7 +2601,7 @@ var openSettings = function openSettings() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/9502fad1e2409042d2969684c096ed19.html";
+module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/e38d7fccc06a5f07e234abc9ba90cbcc.html";
 
 /***/ }),
 
