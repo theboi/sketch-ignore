@@ -23,22 +23,25 @@ if (Settings.sessionVariable('hideIsOn-key') === undefined) {
 export const toggleLayers = () => {
   document.pages.map(value => {
     value.layers.map(value => {
-      value.layers.map(value => {
-        // For layers in Artboard
+      if (value.type === 'Artboard' || value.type === 'SymbolMaster') {
+        value.layers.map(value => {
+          // For layers in Artboard
+          if (value.name.startsWith(indicator)) {
+            if (Settings.sessionVariable('hideIsOn-key')) {
+              value.hidden = false
+            } else {
+              value.hidden = true
+            }
+          }
+        })
+      } else {
+        // For Artboards/layers outside Artboard
         if (value.name.startsWith(indicator)) {
           if (Settings.sessionVariable('hideIsOn-key')) {
             value.hidden = false
           } else {
             value.hidden = true
           }
-        }
-      })
-      // For Artboards/layers outside Artboard
-      if (value.name.startsWith(indicator)) {
-        if (Settings.sessionVariable('hideIsOn-key')) {
-          value.hidden = false
-        } else {
-          value.hidden = true
         }
       }
     })

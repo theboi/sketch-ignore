@@ -2541,7 +2541,19 @@ if (Settings.sessionVariable('hideIsOn-key') === undefined) {
 var toggleLayers = function toggleLayers() {
   document.pages.map(function (value) {
     value.layers.map(function (value) {
-      value.layers.map(function (value) {
+      if (value.type === 'Artboard' || value.type === 'SymbolMaster') {
+        value.layers.map(function (value) {
+          // For layers in Artboard
+          if (value.name.startsWith(indicator)) {
+            if (Settings.sessionVariable('hideIsOn-key')) {
+              value.hidden = false;
+            } else {
+              value.hidden = true;
+            }
+          }
+        });
+      } else {
+        // For Artboards/layers outside Artboard
         if (value.name.startsWith(indicator)) {
           if (Settings.sessionVariable('hideIsOn-key')) {
             value.hidden = false;
@@ -2549,7 +2561,7 @@ var toggleLayers = function toggleLayers() {
             value.hidden = true;
           }
         }
-      });
+      }
     });
   }); // Toggle hideIsOn-key variable
 
