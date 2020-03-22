@@ -2,6 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
   "icon": "icon.png",
   "identifier": "com.ryanthe.sketch-ignore",
+  "description": "A sketch plugin that allows you to Hide files with a keyboard shortcut",
   "compatibleVersion": 3,
   "bundleVersion": 1,
   "commands": [
@@ -44,7 +45,6 @@
     ]
   },
   "version": "0.1.1",
-  "description": "s",
   "name": "sketch-ignore",
   "disableCocoaScriptPreprocessor": true,
   "appcast": "https://raw.githubusercontent.com/theboi/sketch-ignore/master/.appcast.xml",

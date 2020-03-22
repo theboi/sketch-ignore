@@ -19,33 +19,32 @@ if (Settings.sessionVariable('hideIsOn-key') === undefined) {
   Settings.setSessionVariable('hideIsOn-key', false)
 }
 
+const checkForIndicatorMatch = (value) => {
+  console.log(value)
+  if (value.type === 'Artboard' || value.type === 'SymbolMaster' || value.type === 'Group') {
+    value.layers.map(value => {
+      checkForIndicatorMatch(value)
+    })
+  } else {
+    // For Artboards/layers not in groups
+    if (value.name.startsWith(indicator)) {
+      if (Settings.sessionVariable('hideIsOn-key')) {
+        value.hidden = false
+      } else {
+        value.hidden = true
+      }
+    }
+  }
+}
+
 // toggleLayers
 export const toggleLayers = () => {
   document.pages.map(value => {
     value.layers.map(value => {
-      if (value.type === 'Artboard' || value.type === 'SymbolMaster') {
-        value.layers.map(value => {
-          // For layers in Artboard
-          if (value.name.startsWith(indicator)) {
-            if (Settings.sessionVariable('hideIsOn-key')) {
-              value.hidden = false
-            } else {
-              value.hidden = true
-            }
-          }
-        })
-      } else {
-        // For Artboards/layers outside Artboard
-        if (value.name.startsWith(indicator)) {
-          if (Settings.sessionVariable('hideIsOn-key')) {
-            value.hidden = false
-          } else {
-            value.hidden = true
-          }
-        }
-      }
+      checkForIndicatorMatch(value)
     })
   })
+
   // Toggle hideIsOn-key variable
   Settings.setSessionVariable('hideIsOn-key', !(Settings.sessionVariable('hideIsOn-key')))
 }

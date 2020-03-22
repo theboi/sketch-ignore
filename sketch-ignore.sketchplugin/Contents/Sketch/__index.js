@@ -2535,33 +2535,32 @@ var indicator = Settings.settingForKey('indicator-key'); // For first time sketc
 
 if (Settings.sessionVariable('hideIsOn-key') === undefined) {
   Settings.setSessionVariable('hideIsOn-key', false);
-} // toggleLayers
+}
+
+var checkForIndicatorMatch = function checkForIndicatorMatch(value) {
+  console.log(value);
+
+  if (value.type === 'Artboard' || value.type === 'SymbolMaster' || value.type === 'Group') {
+    value.layers.map(function (value) {
+      checkForIndicatorMatch(value);
+    });
+  } else {
+    // For Artboards/layers not in groups
+    if (value.name.startsWith(indicator)) {
+      if (Settings.sessionVariable('hideIsOn-key')) {
+        value.hidden = false;
+      } else {
+        value.hidden = true;
+      }
+    }
+  }
+}; // toggleLayers
 
 
 var toggleLayers = function toggleLayers() {
   document.pages.map(function (value) {
     value.layers.map(function (value) {
-      if (value.type === 'Artboard' || value.type === 'SymbolMaster') {
-        value.layers.map(function (value) {
-          // For layers in Artboard
-          if (value.name.startsWith(indicator)) {
-            if (Settings.sessionVariable('hideIsOn-key')) {
-              value.hidden = false;
-            } else {
-              value.hidden = true;
-            }
-          }
-        });
-      } else {
-        // For Artboards/layers outside Artboard
-        if (value.name.startsWith(indicator)) {
-          if (Settings.sessionVariable('hideIsOn-key')) {
-            value.hidden = false;
-          } else {
-            value.hidden = true;
-          }
-        }
-      }
+      checkForIndicatorMatch(value);
     });
   }); // Toggle hideIsOn-key variable
 
@@ -2601,7 +2600,7 @@ var openSettings = function openSettings() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/e38d7fccc06a5f07e234abc9ba90cbcc.html";
+module.exports = "file://" + String(context.scriptPath).split(".sketchplugin/Contents/Sketch")[0] + ".sketchplugin/Contents/Resources/_webpack_resources/7eb922d94e9d9abc8c848a32d9b6c69f.html";
 
 /***/ }),
 
